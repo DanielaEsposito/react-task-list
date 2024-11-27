@@ -3,6 +3,7 @@
   box-sizing: border-box;
   margin: 0px;
   padding: 0px;
+ 
 }
 /*HEADER*/
 .header{
@@ -11,4 +12,7 @@
 }
 h1{
   line-height: 100px;
+}
+ul{
+  list-style: none;
 }

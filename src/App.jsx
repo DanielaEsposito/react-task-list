@@ -78,8 +78,11 @@ function App() {
   console.log(tasks);
 
   const currentTasksSearched = tasks.filter((task) => task.state !== "completed")
+  
   //console.log(currentTasks);
   const currentTasks = ()=>(
+  
+   
      currentTasksSearched.map((task)=>(
       <ul key={task.id} >
         <li className= "fw-bold">{task.title} <span className="badge text-bg-primary">{task.state}</span></li>
@@ -119,9 +122,9 @@ function App() {
     <div className="container">
     {currentTasks()}
     </div>
-   
-    <h2>COMPLETED TASKS ({completedTasksSearched.length}) </h2>
+   <hr />
     <div className="container">
+    <h2>COMPLETED TASKS ({completedTasksSearched.length}) </h2>
     {completedTasks()}
     </div>
     
