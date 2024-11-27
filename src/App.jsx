@@ -82,7 +82,7 @@ function App() {
   const currentTasks = ()=>(
      currentTasksSearched.map((task)=>(
       <ul key={task.id} >
-        <li calssName= "fw-bold">{task.title} <span calssName="badge text-bg-primary">{task.state}</span></li>
+        <li className= "fw-bold">{task.title} <span className="badge text-bg-primary">{task.state}</span></li>
         <li>Priority: {task.priority}</li>
         <li>Est.time:{task.estimatedTime}</li>
       </ul>
@@ -97,7 +97,7 @@ function App() {
   const completedTasks = ()=>(
      completedTasksSearched.map((task)=>(
       <ul key={task.id} >
-        <li calssName= "fw-bold">{task.title} <span calssName="badge text-bg-primary">{task.state}</span></li>
+        <li className= "fw-bold">{task.title} <span className="badge text-bg-primary">{task.state}</span></li>
         <li>Priority: {task.priority}</li>
         <li>Est.time:{task.estimatedTime}</li>
       </ul>
@@ -105,20 +105,22 @@ function App() {
       ))
     
   )
+  console.log(currentTasksSearched.length);
   
   return (<>
-  <header calssName="header">
+  <header className="header">
    <div className="container">
-   <h1>TASK LIST</h1>
+   <h1>TASK LIST </h1>
+   
    </div>
   </header>
   <div className="container">
-    <h2>CURRENT TASKS</h2>
+    <h2>CURRENT TASKS ({currentTasksSearched.length})</h2>
     <div className="container">
     {currentTasks()}
     </div>
    
-    <h2>COMPLETED TASKS</h2>
+    <h2>COMPLETED TASKS ({completedTasksSearched.length}) </h2>
     <div className="container">
     {completedTasks()}
     </div>
