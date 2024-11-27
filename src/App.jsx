@@ -92,7 +92,19 @@ function App() {
   )
   console.log(currentTasks());
   
-
+  const completedTasksSearched = tasks.filter((task) => task.state === "completed")
+  //console.log(currentTasks);
+  const completedTasks = ()=>(
+     completedTasksSearched.map((task)=>(
+      <ul key={task.id} >
+        <li calssName= "fw-bold">{task.title} <span calssName="badge text-bg-primary">{task.state}</span></li>
+        <li>Priority: {task.priority}</li>
+        <li>Est.time:{task.estimatedTime}</li>
+      </ul>
+        
+      ))
+    
+  )
   
   return (<>
   <header calssName="header">
@@ -102,8 +114,15 @@ function App() {
   </header>
   <div className="container">
     <h2>CURRENT TASKS</h2>
-     {currentTasks()}
+    <div className="container">
+    {currentTasks()}
+    </div>
+   
     <h2>COMPLETED TASKS</h2>
+    <div className="container">
+    {completedTasks()}
+    </div>
+    
   </div>
   
   </>
